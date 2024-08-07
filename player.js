@@ -29,7 +29,7 @@
 
     const setButton = document.getElementById('setButton');
 
-    const box = document.getElementById('box');
+    const box = document.querySelector('box');
     const setContainer = document.getElementById('set-container');
 
     let fadeInterval;

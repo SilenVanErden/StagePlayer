@@ -6,7 +6,7 @@
     --shadow: 2px 2px 6px 2px #aa4444;
 }
 
-#box {
+.box {
     height: 300px;  /*120px;*/
     width: 800px;
     /*background: var(--main-color) url("bg3.png") no-repeat scroll 12px 12px;*/
@@ -29,68 +29,71 @@ button {
     margin: 10px;
 }
 
-.playPausePos {
+/* Position Play Pause */
+.playButton,
+.pauseButton
+{
     margin-top: 64px;
 }
 
-/* .muteUnmutePos {} */
-
-.play-icon {
-    background-image: url("img/play.png");
-}
-
-.pause-icon {
-    background-image: url("img/pause.png");
-}
-
-.mute-icon {
+.muteButton {
     background-image: url("img/mute.png");
 }
 
-.unmute-icon {
+.unmuteButton {
     background-image: url("img/mute.png");
     filter: grayscale(0%) sepia(1) saturate(5) hue-rotate(300deg);
 }
 
-.vol-plus-icon {
+/* Position Mute Unmute */
+
+.playButton {
+    background-image: url("img/play.png");
+}
+
+.pauseButton {
+    background-image: url("img/pause.png");
+}
+
+.volPlusButton {
     background-image: url("img/vol-plus.png");
     margin-left: 108px;
 }
 
-.vol-minus-icon {
+.volMinusButton {
     background-image: url("img/vol-minus.png");
     margin-left: 64px;
 }
 
-.fade-in-icon {
+.fadeInButton {
     background-image: url("img/wave-NO.png");
     margin-top: 64px;
     margin-left: 64px;
 }
 
-.fade-hold-icon {
+.fadeHoldButton {
     background-image: url("img/hold.png");
     margin-top: 64px;
     margin-left: 108px;
 }
 
-.fade-out-icon {
+.fadeOutButton {
     background-image: url("img/wave-NW.png");
     margin-top: 64px;
     margin-left: 152px;
 }
 
-.reset-icon {
+.resetButton {
     background-image: url("img/links.png");
     margin-left: 162px;
 }
 
-.set-icon {
+.setButton {
     background-image: url("img/set.png");
     margin-left: 750px;
 }
 
-.add-icon {
+.addButton {
     background-image: url("img/plus.png");
     margin-top: 64px;
     margin-left: 750px;
