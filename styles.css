@@ -7,8 +7,7 @@
 }
 
 #box {
-    height: 300px;
-    /*120px;*/
+    height: 300px;  /*120px;*/
     width: 800px;
     background: var(--main-color) url("bg3.png") no-repeat scroll 12px 12px;
     border-radius: 14px;
