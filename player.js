@@ -9,6 +9,7 @@
     //stage player
     const audio = document.getElementById("audio");
 
+    const box = document.querySelector('.box');
 
     const muteButton = document.querySelector(".muteButton");
     const unmuteButton = document.querySelector(".unmuteButton");    
@@ -36,7 +37,6 @@
 
     const setButton = document.querySelector('.setButton');
 
-    const box = document.querySelector('box');
     const setContainer = document.getElementById('set-container');
 
     let fadeInterval;
