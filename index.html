@@ -1,537 +1,70 @@
 <html>
-  <head></head>
-  <body>
-    <style>
-      :root{
-        --main-color: #882200;
-        --bg-color: #662200;
-        --font-color: #ffff00;
-        --bar-color: #ff8800;
-        --shadow: 2px 2px 6px 2px #aa4444;
-      }
-	
-      #box{
-        height: 300px;    //120px;
-        width:  800px;
-        background: var(--main-color) url("bg3.png") no-repeat scroll 12px 12px;
-        border-radius: 14px;
-        box-shadow: var(--shadow);
-      }
 
-      .button{
-        position: absolute;
-        box-shadow: var(--shadow);
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
 
-        width:  40px;
-        height:  40px;
-        border-radius: 20px;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        border: none;
-        margin: 10px;
-      }
+<body>
 
-      .playPausePos{
-        margin-top: 64px;
-      }
-
-      .muteUnmutePos{
-      }
-
-      .play-icon{
-        background-image: url("img/play.png");
-      }
-
-      .pause-icon{
-        background-image: url("img/pause.png");
-      }
-
-      .mute-icon{
-        background-image: url("img/mute.png");
-      }
-
-      .unmute-icon{
-        background-image: url("img/mute.png");
-        filter: grayscale(0%) sepia(1) saturate(5) hue-rotate(300deg);
-      }
-
-      .vol-plus-icon{
-        background-image: url("img/vol-plus.png");
-        margin-left: 108px;
-      }
-
-      .vol-minus-icon{
-        background-image: url("img/vol-minus.png");
-        margin-left: 64px;
-      }
-
-      .fade-in-icon{
-        background-image: url("img/wave-NO.png");
-        margin-top: 64px;
-        margin-left: 64px;
-      }
-
-      .fade-hold-icon{
-        background-image: url("img/hold.png");
-        margin-top: 64px;
-        margin-left: 108px;
-      }
-
-      .fade-out-icon{
-        background-image: url("img/wave-NW.png");
-        margin-top: 64px;
-        margin-left: 152px;
-      }
-
-      .reset-icon{
-        background-image: url("img/links.png");
-        margin-left: 162px;
-      }
-
-      .set-icon{
-        background-image: url("img/set.png");
-        margin-left: 750px;
-      }
-
-      .add-icon{
-        background-image: url("img/plus.png");
-        margin-top: 64px;
-        margin-left: 750px;
-      }
-
-      .hidden {
-        opacity: 0;
-        pointer-events: none;
-      }
-  
-      #progress-container {
-        position: absolute;
-        box-shadow: var(--shadow);
-
-        width: 230px;
-        height: 4px;
-        background-color: var(--bg-color);
-        margin-top: 100px;
-        margin-left: 210px;
-        margin-right: 10px;
-      }
-
-      #progress-bar {
-        width: 0;
-        height: 100%;
-        background-color: var(--bar-color);
-        transition: width 0.1s linear;
-      }
-
-      #vol-container {
-        position: absolute;
-        box-shadow: var(--shadow);
-
-        width: 80px;
-        height: 4px;
-        background-color: var(--bg-color);
-        margin-top: 90px;
-        margin-left: 210px;
-        margin-right: 10px;
-      }
-
-      #vol-bar {
-        width: 0;
-        height: 100%;
-        position: right;
-        background-color: var(--bar-color);
-        transition: width 0.1s linear;
-      }
-	  
-      #timer-display {
-        position: absolute;
-        box-shadow: var(--shadow);
-
-        width: 64px;
-        height: 20px;
-        background-color: var(--bg-color);
-        margin-top: 60px;
-        margin-left: 210px;
-        margin-right: 10px;
-      }
-	  
-      #timer-text{	
-        font-size: 16;
-        color: var(--font-color); 
-        text-align: center;		
-      }
-      
-      #volume-display {
-        position: absolute;
-        box-shadow: var(--shadow);
-
-        width: 40px;
-        height: 20px;
-        background-color: var(--bg-color);
-        margin-top: 60px;
-        margin-left: 280px;
-        margin-right: 10px;
-      }
-      
-      #volume-text{	
-        font-size: 16;
-        text-align: center;
-        color: var(--font-color); 	  
-      }
-	  
-      #title-display {
-        position: absolute;
-        box-shadow: var(--shadow);
-
-        width: 200px;
-        height: 20px;
-        background-color: var(--bg-color);
-        margin-top: 60px;
-        margin-left: 340px;
-        margin-right: 10px;
-      }
-	  
-      #title-text{	
-        font-size: 16;
-        text-align: left;
-        color: var(--font-color); 	  
-      }
-      
-      #set-container{
-        position: absolute;
-        font-size: 16;
-        color: white;
-        margin-top: 120px;
-        margin-left: 10px;
-      }
-      
-      input{
-        width: 50;
-        heigth: 16;
-        
-      }
-      
-      #output{
-        box-shadow: 2px 2px 6px 2px #004400;
-        border-radius: 4px;
-        font-size: 12;
-        color: darkgreen;
-        background-color: #ffdd44
-      }
-      
-      #time{
-        position: absolute;
-        font-size: 12;
-        color: white;
-        margin-top: 8px;
-        margin-left: 696px;
-      }
-      
-      
-      
-      
-      
-    </style>
-
-	<!-- ---------------------------------------------------------------------------- -->
-
-  
-
-
-
-	<audio id="audio" src="audio/Erdrutsch.mp3" type="audio/mpeg"></audio>
-
-	<div id="box">
-    <div id='time'></div>
-    
-	  <button id="playButton" class="button playPausePos play-icon"></button>
-	  <button id="pauseButton" class="button playPausePos hidden pause-icon"></button>
-
-	  <button id="muteButton" class="button muteUnmutePos mute-icon"></button>
-	  <button id="unmuteButton" class="button muteUnmutePos hidden unmute-icon"></button>
-
-	  <button id="volMinusButton" class="button vol-minus-icon"></button>
-	  <button id="volPlusButton" class="button vol-plus-icon"></button>
-	  
-	  <button id="resetButton" class="button reset-icon"></button>
-
-	  <button id="fadeInButton" class="button fade-in-icon"></button>
-	  <button id="fadeHoldButton" class="button fade-hold-icon"></button>
-	  <button id="fadeOutButton" class="button fade-out-icon"></button>
-	  
-	  <button id="setButton" class="button set-icon"></button>
-	  <button id="addButton" class="button add-icon"></button>
-
-	  <div id="progress-container">
-	    <div id="progress-bar"></div>
-	  </div>
-
-	  <div id="vol-container">
-	    <div id="vol-bar"></div>
-	  </div>
-	  
-	  <div id="timer-display">
-	    <div id="timer-text"></div> 
-	  </div>
-	  
-	  <div id="volume-display">
-	    <div id="volume-text"></div> 
-	  </div>
-	  
-	  <div id="title-display">
-	    <div id="title-text"> - - - </div> 
-	  </div>
-    
-    <div id='set-container'>
-      <div id="maxFadeVol-label">111</div> 
-      <div id="maxFadeVol-label">222</div> 
-      <input type="number" name="alter">
-    </div>
-	</div>
-  
-  
-  <div id='output'></div>
-  
-  
-  
-  
   <!-- ---------------------------------------------------------------------------- -->
 
-    <script>
-      // output util
-      const output = document.getElementById('output');
-      const time = document.getElementById('time');
-      
-      const addOutput = function(x){
-        output.innerHTML = output.innerHTML + '<br>' + x;
-      }
-    
-      //stage player
-      const audio = document.getElementById("audio");
-	  
-      const playButton = document.getElementById("playButton");
-      const pauseButton = document.getElementById("pauseButton");
-      const resetButton = document.getElementById("resetButton");
-      
-      const muteButton = document.getElementById("muteButton");
-      const fadeInButton = document.getElementById("fadeInButton");
-      const fadeOutButton = document.getElementById("fadeOutButton");
-	  
-      const progressContainer = document.getElementById('progress-container');
-      const progressBar = document.getElementById('progress-bar');
-      const volContainer = document.getElementById('vol-container');
-      const volBar = document.getElementById('vol-bar');
-      
-      const timerText = document.getElementById('timer-text');
-      const volText = document.getElementById('volume-text');
-      const titleText = document.getElementById('title-text');
-      
-      const setButton = document.getElementById('setButton');
-      
-      const box = document.getElementById('box');
-      const setContainer = document.getElementById('set-container');
-	  
-      let fadeInterval;
-      let startVolume = 0.5;
-      let isSettings = false;
-     
-      
-      //Functions
-      const mute = function(){                                         //mute   
-        muteButton.classList.add("hidden");
-        unmuteButton.classList.remove("hidden");
-  	    audio.muted = true;        
-      };
-      
-      const unmute = function(){                                       //unmute
-        unmuteButton.classList.add("hidden");
-        muteButton.classList.remove("hidden");
-        audio.muted = false;        
-      }
-      
-      const formatTime = function(timeInSeconds){                      //formatTime
-        const hours = Math.floor(timeInSeconds / 3600);
-        const minutes = Math.floor((timeInSeconds % 3600) / 60);
-        const seconds = Math.floor(timeInSeconds % 60);
+  <audio id="audio" src="audio/Erdrutsch.mp3" type="audio/mpeg"></audio>
 
-        const formattedHours = hours.toString().padStart(2, '0');
-        const formattedMinutes = minutes.toString().padStart(2, '0');
-        const formattedSeconds = seconds.toString().padStart(2, '0');
+  <div id="box">
+    <div id='time'></div>
 
-        return formattedHours + ":" + formattedMinutes + ":" + formattedSeconds;
-      }
-      
-      const refreshTimeDisplays = function(){
-        const progress = (audio.currentTime / audio.duration) * 100;   //refreshTimeDisplays
-        progressBar.style.width = progress + '%';
-        timerText.textContent = formatTime(audio.currentTime);       
-      }
+    <button id="playButton" class="button playPausePos play-icon"></button>
+    <button id="pauseButton" class="button playPausePos hidden pause-icon"></button>
 
-      const refreshVolumeDisplays = function(){                        //refreshVolumeDisplays
-        volBar.style.width = audio.volume * 100 + '%';
-        volText.textContent = Math.floor(audio.volume * 100 +0.5) + '%';
-      }
+    <button id="muteButton" class="button muteUnmutePos mute-icon"></button>
+    <button id="unmuteButton" class="button muteUnmutePos hidden unmute-icon"></button>
 
-      const reset = function(){                                        //reset
-        audio.pause();
-        audio.currentTime = 0;
-        audio.volume = startVolume;
-        unmute();
-        
-        pauseButton.classList.add("hidden");
-        playButton.classList.remove("hidden");
-        clearInterval(fadeInterval);
-      }
-      
-      const setTimer = function(e) {                                   //setTimer
-        const width = this.clientWidth;
-        const clickX = e.offsetX;
-        const duration = audio.duration;
-        audio.currentTime = (clickX / width) * duration;
-      }
-	  
-      const setVolumeByClick = function(e) {                           //setVolumeByClick
-        const width = this.clientWidth;
-        const clickX = e.offsetX;
-        audio.volume = (clickX / width);
-      }
+    <button id="volMinusButton" class="button vol-minus-icon"></button>
+    <button id="volPlusButton" class="button vol-plus-icon"></button>
 
-      const play = function(){                                         //play
-        playButton.classList.add("hidden");
-        pauseButton.classList.remove("hidden");
-        audio.play();
-      }
-	  
-      const pause = function(){                                        //pause
-        pauseButton.classList.add("hidden");
-        playButton.classList.remove("hidden");
-        audio.pause();	
-        clearInterval(fadeInterval);        
-      }
-	  
-      const fadeIn = function() {                                      //fadeIn
-        if(audio.paused){
-          audio.volume = 0;
-        }
-        play();
+    <button id="resetButton" class="button reset-icon"></button>
 
-        // Stoppe vorherige Fade-Intervalle, falls vorhanden
-        clearInterval(fadeInterval);
+    <button id="fadeInButton" class="button fade-in-icon"></button>
+    <button id="fadeHoldButton" class="button fade-hold-icon"></button>
+    <button id="fadeOutButton" class="button fade-out-icon"></button>
 
-        fadeInterval = setInterval(() => {
-          if (audio.volume < 1) {
-            increaseVolume();	 
-          } else {
-            // Stoppe das Intervall
-            clearInterval(fadeInterval);
-          }
-        }, 100); // Erhöhe die Lautstärke alle 200 Millisekunden
-      }
-	  
-	    const fadeOut = function() {                                      //fadeOut
-        // Stoppe vorherige Fade-Intervalle, falls vorhanden
-        clearInterval(fadeInterval);
+    <button id="setButton" class="button set-icon"></button>
+    <button id="addButton" class="button add-icon"></button>
 
-        fadeInterval = setInterval(() => {
-          if (audio.volume > 0) {
-            decreaseVolume();	 
-          } else {
-            // Stoppe das Intervall
-            clearInterval(fadeInterval);
-          }
-        }, 100); // Reduziert die Lautstärke alle 200 Millisekunden
-      }
+    <div id="progress-container">
+      <div id="progress-bar"></div>
+    </div>
 
-      const fadeHold = function() {                                    //fadeHold
-        clearInterval(fadeInterval);
-      }
+    <div id="vol-container">
+      <div id="vol-bar"></div>
+    </div>
 
-      const increaseVolume = function(){                               //increaseVolume
-        audio.volume = Math.min(audio.volume + 0.02, 1);	  
-      }
-      
-      const decreaseVolume = function(){                               //decreaseVolume
-        audio.volume = Math.max(audio.volume - 0.02, 0);	  	    
-      }; 
+    <div id="timer-display">
+      <div id="timer-text"></div>
+    </div>
 
-      const toggleSettings = function(){                               //toggleSettings
-        addOutput('#')
-        if(!isSettings){
-          isSettings = true;
-          box.style.height = '300px';
-          setContainer.classList.remove("hidden");
-        }else{          
-          isSettings = false;
-          box.style.height = '120px';
-          setContainer.classList.add("hidden");
-        }
-        
-      }
+    <div id="volume-display">
+      <div id="volume-text"></div>
+    </div>
+
+    <div id="title-display">
+      <div id="title-text"> - - - </div>
+    </div>
+
+    <div id='set-container'>
+      <div id="maxFadeVol-label">111</div>
+      <div id="maxFadeVol-label">222</div>
+      <input type="number" name="alter">
+    </div>
+  </div>
 
 
-  	  //Input-Listener
-      playButton.addEventListener("click", play);                      //play
-      pauseButton.addEventListener("click", pause);                    //pause
-      resetButton.addEventListener("click", reset);                    //reset
-	  
-  	  muteButton.addEventListener("click", mute);                      //mute
-      unmuteButton.addEventListener("click", unmute);                  //unmute            
-      
-      volPlusButton.addEventListener("click", increaseVolume);         //increaseVolume
-      volMinusButton.addEventListener("click", decreaseVolume);        //decreaseVolume
-      
-      fadeInButton.addEventListener('click', fadeIn);                  //fadeIn
-      fadeOutButton.addEventListener('click', fadeOut);                //fadeOut
-      fadeHoldButton.addEventListener('click', fadeHold);              //fadeHold
-      
-      volContainer.addEventListener('click', setVolumeByClick);        //setVolumeByClick
+  <div id='output'></div>
 
-      
-      //Event-Listener
-      audio.addEventListener("ended", reset)                           //reset
+  <!-- ---------------------------------------------------------------------------- -->
 
-  	  audio.addEventListener('timeupdate', refreshTimeDisplays)        //refreshTimeDisplays
-  	  audio.addEventListener('volumechange', refreshVolumeDisplays)    //refreshVolumeDisplays
+  <script type="module" src="./styles.css"></script>
 
-      progressContainer.addEventListener('click', setTimer);           //setTimer
-      
-      setButton.addEventListener('click', toggleSettings);             //toggleSettings
-      
+</body>
 
-      //Start
-      audio.volume = startVolume;
-      
-      volBar.style.width = audio.volume * 100 + '%';
-      volText.textContent = audio.volume * 100 + '%';
-      
-      timerText.textContent = formatTime(audio.currentTime);
-      titleText.textContent = audio.src.split('/').pop().replaceAll('%20',' ');
-      
-      //test output
-      function aktuelleUhrzeit() {
-          let jetzt = new Date();
-          let stunden = jetzt.getHours();
-          let minuten = jetzt.getMinutes();
-          let sekunden = jetzt.getSeconds();
-
-          // Führende Nullen hinzufügen
-          if (stunden < 10) { stunden = '0' + stunden; }
-          if (minuten < 10) { minuten = '0' + minuten; }
-          if (sekunden < 10) { sekunden = '0' + sekunden; }
-
-          let zeit = stunden + ':' + minuten + ':' + sekunden;
-          time.innerText = zeit;
-      }
-
-      // Aktualisiere die Uhrzeit jede Sekunde
-      setInterval(aktuelleUhrzeit, 1000);
-      addOutput('output:');
-	  
-	 
-    </script>
-
-
-
-  </body>
 </html>

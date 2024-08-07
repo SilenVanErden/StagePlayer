@@ -1,0 +1,225 @@
+:root {
+    --main-color: #882200;
+    --bg-color: #662200;
+    --font-color: #ffff00;
+    --bar-color: #ff8800;
+    --shadow: 2px 2px 6px 2px #aa4444;
+}
+
+#box {
+    height: 300px;
+    /*120px;*/
+    width: 800px;
+    background: var(--main-color) url("bg3.png") no-repeat scroll 12px 12px;
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+}
+
+.button {
+    position: absolute;
+    box-shadow: var(--shadow);
+
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    margin: 10px;
+}
+
+.playPausePos {
+    margin-top: 64px;
+}
+
+/* .muteUnmutePos {} */
+
+.play-icon {
+    background-image: url("img/play.png");
+}
+
+.pause-icon {
+    background-image: url("img/pause.png");
+}
+
+.mute-icon {
+    background-image: url("img/mute.png");
+}
+
+.unmute-icon {
+    background-image: url("img/mute.png");
+    filter: grayscale(0%) sepia(1) saturate(5) hue-rotate(300deg);
+}
+
+.vol-plus-icon {
+    background-image: url("img/vol-plus.png");
+    margin-left: 108px;
+}
+
+.vol-minus-icon {
+    background-image: url("img/vol-minus.png");
+    margin-left: 64px;
+}
+
+.fade-in-icon {
+    background-image: url("img/wave-NO.png");
+    margin-top: 64px;
+    margin-left: 64px;
+}
+
+.fade-hold-icon {
+    background-image: url("img/hold.png");
+    margin-top: 64px;
+    margin-left: 108px;
+}
+
+.fade-out-icon {
+    background-image: url("img/wave-NW.png");
+    margin-top: 64px;
+    margin-left: 152px;
+}
+
+.reset-icon {
+    background-image: url("img/links.png");
+    margin-left: 162px;
+}
+
+.set-icon {
+    background-image: url("img/set.png");
+    margin-left: 750px;
+}
+
+.add-icon {
+    background-image: url("img/plus.png");
+    margin-top: 64px;
+    margin-left: 750px;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#progress-container {
+    position: absolute;
+    box-shadow: var(--shadow);
+
+    width: 230px;
+    height: 4px;
+    background-color: var(--bg-color);
+    margin-top: 100px;
+    margin-left: 210px;
+    margin-right: 10px;
+}
+
+#progress-bar {
+    width: 0;
+    height: 100%;
+    background-color: var(--bar-color);
+    transition: width 0.1s linear;
+}
+
+#vol-container {
+    position: absolute;
+    box-shadow: var(--shadow);
+
+    width: 80px;
+    height: 4px;
+    background-color: var(--bg-color);
+    margin-top: 90px;
+    margin-left: 210px;
+    margin-right: 10px;
+}
+
+#vol-bar {
+    width: 0;
+    height: 100%;
+    position: right;
+    background-color: var(--bar-color);
+    transition: width 0.1s linear;
+}
+
+#timer-display {
+    position: absolute;
+    box-shadow: var(--shadow);
+
+    width: 64px;
+    height: 20px;
+    background-color: var(--bg-color);
+    margin-top: 60px;
+    margin-left: 210px;
+    margin-right: 10px;
+}
+
+#timer-text {
+    font-size: 16;
+    color: var(--font-color);
+    text-align: center;
+}
+
+#volume-display {
+    position: absolute;
+    box-shadow: var(--shadow);
+
+    width: 40px;
+    height: 20px;
+    background-color: var(--bg-color);
+    margin-top: 60px;
+    margin-left: 280px;
+    margin-right: 10px;
+}
+
+#volume-text {
+    font-size: 16;
+    text-align: center;
+    color: var(--font-color);
+}
+
+#title-display {
+    position: absolute;
+    box-shadow: var(--shadow);
+
+    width: 200px;
+    height: 20px;
+    background-color: var(--bg-color);
+    margin-top: 60px;
+    margin-left: 340px;
+    margin-right: 10px;
+}
+
+#title-text {
+    font-size: 16;
+    text-align: left;
+    color: var(--font-color);
+}
+
+#set-container {
+    position: absolute;
+    font-size: 16;
+    color: white;
+    margin-top: 120px;
+    margin-left: 10px;
+}
+
+input {
+    width: 50;
+    height: 16;
+
+}
+
+#output {
+    box-shadow: 2px 2px 6px 2px #004400;
+    border-radius: 4px;
+    font-size: 12;
+    color: darkgreen;
+    background-color: #ffdd44
+}
+
+#time {
+    position: absolute;
+    font-size: 12;
+    color: white;
+    margin-top: 8px;
+    margin-left: 696px;
+}
