@@ -9,14 +9,14 @@
     //stage player
     const audio = document.getElementById("audio");
 
-    const playButton = document.querySelector("playButton");
-    const pauseButton = document.querySelector("pauseButton");
-    const resetButton = document.querySelector("resetButton");
+    const playButton = document.querySelector(".playButton");
+    const pauseButton = document.querySelector(".pauseButton");
+    const resetButton = document.querySelector(".resetButton");
 
-    const muteButton = document.querySelector("muteButton");
+    const muteButton = document.querySelector(".muteButton");
     const unmuteButton = document.querySelector(".unmuteButton");
-    const fadeInButton = document.querySelector("fadeInButton");
-    const fadeOutButton = document.querySelector("fadeOutButton");
+    const fadeInButton = document.querySelector(".fadeInButton");
+    const fadeOutButton = document.querySelector(".fadeOutButton");
 
     const progressContainer = document.getElementById('progress-container');
     const progressBar = document.getElementById('progress-bar');
@@ -27,7 +27,7 @@
     const volText = document.getElementById('volume-text');
     const titleText = document.getElementById('title-text');
 
-    const setButton = document.querySelector('setButton');
+    const setButton = document.querySelector('.setButton');
 
     const box = document.querySelector('box');
     const setContainer = document.getElementById('set-container');
