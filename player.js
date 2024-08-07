@@ -14,7 +14,7 @@
     const resetButton = document.getElementById("resetButton");
 
     const muteButton = document.getElementById("muteButton");
-    const unmuteButton = document.querySelector(".muteButton");
+    const unmuteButton = document.querySelector(".unmuteButton");
     const fadeInButton = document.getElementById("fadeInButton");
     const fadeOutButton = document.getElementById("fadeOutButton");
 
