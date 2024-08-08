@@ -1,6 +1,6 @@
     // output util
-    const output = document.getElementById('output');
-    const time = document.getElementById('time');
+    const output = document.querySelector('.output');
+    const time = document.querySelector('.time');
 
     const addOutput = function (x) {
       output.innerHTML = output.innerHTML + '<br>' + x;
