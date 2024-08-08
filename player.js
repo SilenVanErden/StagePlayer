@@ -26,10 +26,10 @@
     const fadeHoldButton = document.querySelector(".fadeHoldButton");
     const fadeOutButton = document.querySelector(".fadeOutButton");
 
-    const progressContainer = document.querySelector('progressContainer');
-    const progressBar = document.querySelector('progressBar');
-    const volContainer = document.querySelector('volContainer');
-    const volBar = document.querySelector('volBar');
+    const progressContainer = document.querySelector('.progressContainer');
+    const progressBar = document.querySelector('.progressBar');
+    const volContainer = document.querySelector('.volContainer');
+    const volBar = document.querySelector('.volBar');
 
 
     addOutput(progressContainer);
