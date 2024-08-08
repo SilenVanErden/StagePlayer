@@ -31,6 +31,13 @@
     const volContainer = document.querySelector('volContainer');
     const volBar = document.querySelector('volBar');
 
+
+    addOutput(progressContainer);
+    addOutput(progressBar);
+    addOutput(volContainer);
+    addOutput(volBar);
+
+
     const timerText = document.getElementById('timer-text');
     const volText = document.getElementById('volume-text');
     const titleText = document.getElementById('title-text');
