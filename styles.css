@@ -148,8 +148,8 @@ button {
 
 
 
-
-#timer-display {
+/* Timer Display */
+.timerDisplay {
     position: absolute;
     box-shadow: var(--shadow);
 
@@ -161,13 +161,14 @@ button {
     margin-right: 10px;
 }
 
-#timer-text {
+.timerText {
     font-size: 16;
     color: var(--font-color);
     text-align: center;
 }
 
-#volume-display {
+/* Volume Display */
+.volDisplay {
     position: absolute;
     box-shadow: var(--shadow);
 
@@ -179,13 +180,14 @@ button {
     margin-right: 10px;
 }
 
-#volume-text {
+.volText {
     font-size: 16;
     text-align: center;
     color: var(--font-color);
 }
 
-#title-display {
+/* Title Display */
+.titleDisplay {
     position: absolute;
     box-shadow: var(--shadow);
 
@@ -197,13 +199,14 @@ button {
     margin-right: 10px;
 }
 
-#title-text {
+.titleText {
     font-size: 16;
     text-align: left;
     color: var(--font-color);
 }
 
-#set-container {
+/* Settings Container */
+.setContainer {
     position: absolute;
     font-size: 16;
     color: white;
@@ -217,7 +220,12 @@ input {
 
 }
 
-#output {
+
+/* - Utils ---------------------------------------------------------------- */
+
+
+/* Output */
+.output {
     box-shadow: 2px 2px 6px 2px #004400;
     border-radius: 4px;
     font-size: 12;
@@ -225,7 +233,7 @@ input {
     background-color: #ffdd44
 }
 
-#time {
+.time {
     position: absolute;
     font-size: 12;
     color: white;

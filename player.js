@@ -38,13 +38,13 @@
     addOutput(volBar);
 
 
-    const timerText = document.getElementById('timer-text');
-    const volText = document.getElementById('volume-text');
-    const titleText = document.getElementById('title-text');
+    const timerText = document.querySelector('.timerText');
+    const volText = document.querySelector('.volText');
+    const titleText = document.querySelector('.titleText');
 
     const setButton = document.querySelector('.setButton');
 
-    const setContainer = document.getElementById('set-container');
+    const setContainer = document.querySelector('.setContainer');
 
     let fadeInterval;
     let startVolume = 0.5;
