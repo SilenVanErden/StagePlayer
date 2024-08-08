@@ -104,7 +104,7 @@ button {
     pointer-events: none;
 }
 
-#progressContainer {
+.progressContainer {
     position: absolute;
     box-shadow: var(--shadow);
 
@@ -116,14 +116,14 @@ button {
     margin-right: 10px;
 }
 
-#progressBar {
+.progressBar {
     width: 0;
     height: 100%;
     background-color: var(--bar-color);
     transition: width 0.1s linear;
 }
 
-#volContainer {
+.volContainer {
     position: absolute;
     box-shadow: var(--shadow);
 
@@ -135,7 +135,7 @@ button {
     margin-right: 10px;
 }
 
-#volBar {
+.volBar {
     width: 0;
     height: 100%;
     position: right;
